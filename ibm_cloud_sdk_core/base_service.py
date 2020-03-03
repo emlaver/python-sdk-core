@@ -222,9 +222,6 @@ class BaseService:
                                         response.status_code)
 
             error_message = None
-            if response.status_code == 401:
-                error_message = 'Unauthorized: Access is denied due to ' \
-                                'invalid credentials'
             raise ApiException(
                 response.status_code, error_message, http_response=response)
         except requests.exceptions.SSLError:
